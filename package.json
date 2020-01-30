@@ -5,7 +5,7 @@
   "description": "Тестовое задание - слайдер для компании Россайт",
   "scripts": {
     "editorconfig": "editorconfig-cli",
-    "stylelint": "stylelint \"source/sass/**/*.scss\" --syntax scss",
+    "stylelint": "stylelint \"source/css/style.css\" --syntax css",
     "test": "npm run editorconfig && npm run stylelint && eslint source/js/",
     "build": "gulp build",
     "start": "gulp start"
@@ -21,7 +21,7 @@
     "source/*.html",
     "source/js/**/*.js",
     "source/img/**/*.svg",
-    "source/sass/**/*.{sass,scss}"
+    "source/css/style.css"
   ],
   "devDependencies": {
     "autoprefixer": "^9.7.1",
