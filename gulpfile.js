@@ -2,7 +2,6 @@
 
 var gulp = require('gulp');
 var plumber = require('gulp-plumber');
-var sass = require('gulp-sass');
 var sourcemap = require('gulp-sourcemaps');
 var del = require('del');
 var htmlmin = require('gulp-htmlmin');
@@ -32,11 +31,10 @@ gulp.task('cssclean', function () {
 
 gulp.task('css', function () {
     return gulp.src([
-        'source/sass/style.scss'
+        'source/css/style.css'
     ])
         .pipe(plumber())
         .pipe(sourcemap.init())
-        .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
         .pipe(postcss([
             autoprefixer()
         ]))
@@ -54,7 +52,7 @@ gulp.task('css', function () {
 
 gulp.task('bootstrap', function () {
     return gulp.src([
-      'source/sass/bootstrap.min.scss'
+      'source/css/bootstrap.min.css'
     ])
       .pipe(gulp.dest('build/css/'))
 });
@@ -107,7 +105,7 @@ gulp.task('server', function () {
         ui: false
     });
 
-    gulp.watch('source/sass/**/*.{scss,sass}', gulp.series('cssclean', 'css'));
+    gulp.watch('source/css/style.css', gulp.series('cssclean', 'css'));
     gulp.watch('source/*.html', gulp.series('copyhtml')).on('change', server.reload);
     gulp.watch('source/js/*.js', gulp.series('jsmin', 'refresh'));
 });
@@ -116,6 +114,7 @@ gulp.task('build', gulp.series(
     'clean',
     'copyhtml',
     'images',
+    'bootstrap',
     'css',
     'webp',
     'jsmin'
