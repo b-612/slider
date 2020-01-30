@@ -8,7 +8,6 @@ var del = require('del');
 var htmlmin = require('gulp-htmlmin');
 var imagemin = require('gulp-imagemin');
 var webp = require('gulp-webp');
-var svgstore = require('gulp-svgstore');
 var rename = require('gulp-rename');
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
@@ -19,11 +18,6 @@ var server = require('browser-sync').create();
 
 gulp.task('clean', function () {
     return del('build');
-});
-
-gulp.task('copyfonts', function () {
-    return gulp.src('source/fonts/**/*.{woff,woff2}')
-        .pipe(gulp.dest('build/fonts'));
 });
 
 gulp.task('copyhtml', function () {
@@ -81,18 +75,6 @@ gulp.task('webp', function () {
         .pipe(gulp.dest('build/img'));
 });
 
-gulp.task ('svgsprite', function () {
-    return gulp.src('source/img/svgsprite/*')
-        .pipe(imagemin([
-        imagemin.svgo()
-      ]))
-        .pipe(svgstore({
-            inlineSvg: true
-        }))
-        .pipe(rename('sprite.svg'))
-        .pipe(gulp.dest('build/img'));
-});
-
 gulp.task('jsmin', function () {
     return gulp.src('source/js/*.js')
         .pipe(jsminify({
@@ -127,10 +109,8 @@ gulp.task('server', function () {
 
 gulp.task('build', gulp.series(
     'clean',
-    'copyfonts',
     'copyhtml',
     'images',
-    'svgsprite',
     'css',
     'webp',
     'jsmin'
