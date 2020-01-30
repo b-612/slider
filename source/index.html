@@ -15,72 +15,74 @@
   </head>
 
   <body>
-    <h1 class="visually-hidden">Тестовое задание на должность верстальщика в компанию Россайт</h1>
-    <section class="slider">
-      <h2 class="visually-hidden">Слайдер со слайдами</h2>
+    <main>
+      <h1 class="visually-hidden">Тестовое задание на должность верстальщика в компанию Россайт</h1>
 
-      <div class="navbar-001">
-        <div class="container-fluid">
-          <div class="row slider">
+      <section class="slider">
+        <h2 class="visually-hidden">Слайдер со слайдами</h2>
 
-            <div class="row slide slide--first">
-              <div class="row center-block slide__content-wrapper">
-                <div class="col-xs-12 col-md-6 col-md-offset-6 col-lg-7 col-lg-offset-5 slide__text-wrapper">
-                  <h3 class="slide__title">Этот текст добавлен для демонстрации на странице</h3>
-                  <p class="slide__text">Акция действует с 01.07.18 по 31.07.18</p>
-                  <a href="#" class="btn btn-info slide__btn slide__btn--details">Подробнее</a>
-                  <a href="#" class="btn btn-default slide__btn slide__btn--specials">Акции</a>
+        <div class="navbar-001">
+          <div class="container-fluid">
+            <div class="row slider">
+
+              <div class="row slide slide--first">
+                <div class="row center-block slide__content-wrapper">
+                  <div class="col-xs-12 col-sm-5 col-sm-offset-7 col-md-6 col-md-offset-6 col-lg-7 col-lg-offset-5 slide__text-wrapper">
+                    <h3 class="slide__title">Этот текст добавлен для демонстрации на странице</h3>
+                    <p class="slide__text">Акция действует с 01.07.18 по 31.07.18</p>
+                    <a href="#" class="btn btn-info slide__btn slide__btn--details">Подробнее</a>
+                    <a href="#" class="btn btn-default slide__btn slide__btn--specials">Акции</a>
+                  </div>
                 </div>
+
+                <picture>
+                  <source type="image/webp" media="(min-width: 768px)" srcset="img/slider_1.webp">
+                  <source media="(min-width: 768px)" srcset="img/slider_1.jpg">
+                  <source type="image/webp" srcset="img/slider_1min.webp">
+                  <img src="img/slider_1min.jpg" alt="Изображение к первому слайду" class="slide__image" width="767" height="400">
+                </picture>
               </div>
 
-              <picture>
-                <source type="image/webp" media="(min-width: 768px)" srcset="img/slider_1.webp">
-                <source media="(min-width: 768px)" srcset="img/slider_1.jpg">
-                <source type="image/webp" srcset="img/slider_1min.webp">
-                <img src="img/slider_1min.jpg" alt="Изображение к первому слайду" class="slide__image" width="767" height="400">
-              </picture>
+              <ul class="visible-xs list-unstyled slider__pagination slider__pagination--mobile" aria-label="Навигация по слайдам">
+                <li class="slider__nav-bullet">
+                  <span class="visually-hidden">Первый слайд</span>
+                </li>
+
+                <li class="slider__nav-bullet">
+                  <span class="visually-hidden">Второй слайд</span>
+                </li>
+
+                <li class="slider__nav-bullet">
+                  <span class="visually-hidden">Третий слайд</span>
+                </li>
+
+                <li class="slider__nav-bullet">
+                  <span class="visually-hidden">Четвёртый слайд</span>
+                </li>
+              </ul>
+
+              <ul class="hidden-xs list-unstyled slider__pagination slider__pagination--not-mobile" aria-label="Навигация по слайдам">
+                <li class="slider__nav-bullet">
+
+                </li>
+
+                <li class="slider__nav-bullet">
+
+                </li>
+
+                <li class="slider__nav-bullet">
+
+                </li>
+
+                <li class="slider__nav-bullet">
+
+                </li>
+              </ul>
+
             </div>
-
-            <ul class="visible-xs list-unstyled slider__pagination slider__pagination--mobile" aria-label="Навигация по слайдам">
-              <li class="slider__nav-bullet">
-                <span class="visually-hidden">Первый слайд</span>
-              </li>
-
-              <li class="slider__nav-bullet">
-                <span class="visually-hidden">Второй слайд</span>
-              </li>
-
-              <li class="slider__nav-bullet">
-                <span class="visually-hidden">Третий слайд</span>
-              </li>
-
-              <li class="slider__nav-bullet">
-                <span class="visually-hidden">Четвёртый слайд</span>
-              </li>
-            </ul>
-
-            <ul class="hidden-xs list-unstyled slider__pagination slider__pagination--not-mobile" aria-label="Навигация по слайдам">
-              <li class="slider__nav-bullet">
-
-              </li>
-
-              <li class="slider__nav-bullet">
-
-              </li>
-
-              <li class="slider__nav-bullet">
-
-              </li>
-
-              <li class="slider__nav-bullet">
-
-              </li>
-            </ul>
-
           </div>
         </div>
-      </div>
-    </section>
-
+      </section>
+    </main>
   </body>
 </html>
