@@ -9,19 +9,8 @@ html {
 }
 
 body {
-  position: relative;
-
-  min-width: $mobile-min-width;
-
-  font-family: $geometria;
-  font-size: 14px;
-  line-height: $body-lh;
-  font-weight: normal;
-  color: $dark-on-light;
-  word-break: break-word;
-
-  background-color: $body-bg;
   -webkit-tap-highlight-color: transparent;
+  background-color: #ffffff;
 }
 
 a {
@@ -43,3 +32,5 @@ img {
   width: 1px !important;
   overflow: hidden;
 }
+
+
