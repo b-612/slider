@@ -32,8 +32,7 @@ gulp.task('cssclean', function () {
 
 gulp.task('css', function () {
     return gulp.src([
-        'source/sass/style.scss',
-        'source/sass/normalize.scss'
+        'source/sass/style.scss'
     ])
         .pipe(plumber())
         .pipe(sourcemap.init())
@@ -51,6 +50,13 @@ gulp.task('css', function () {
         .pipe(sourcemap.write('.'))
         .pipe(gulp.dest('build/css/'))
         .pipe(server.stream());
+});
+
+gulp.task('bootstrap', function () {
+    return gulp.src([
+      'source/sass/bootstrap.min.scss'
+    ])
+      .pipe(gulp.dest('build/css/'))
 });
 
 gulp.task('images', function () {
