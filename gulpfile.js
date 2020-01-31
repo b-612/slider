@@ -10,7 +10,7 @@ var webp = require('gulp-webp');
 var rename = require('gulp-rename');
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
-var csso = require('gulp-csso');
+var cssmin = require('gulp-cssmin');
 var jsminify = require('gulp-minify');
 var flatten = require('gulp-flatten');
 var server = require('browser-sync').create();
@@ -31,7 +31,8 @@ gulp.task('cssclean', function () {
 
 gulp.task('css', function () {
     return gulp.src([
-        'source/css/style.css'
+        'source/css/style.css',
+        'source/css/slick.css'
     ])
         .pipe(plumber())
         .pipe(sourcemap.init())
@@ -40,7 +41,7 @@ gulp.task('css', function () {
         ]))
         .pipe(gulp.dest('build/css/'))
         .pipe(sourcemap.init())
-        .pipe(csso())
+        .pipe(cssmin())
         .pipe(rename({
             suffix: '.min',
             extname: '.css'
@@ -60,7 +61,8 @@ gulp.task('bootstrap', function () {
 gulp.task('images', function () {
     return gulp.src([
       'source/img/*.{png,jpg,svg}',
-      'source/img/towebp/*'
+      'source/img/towebp/*',
+      '!source/img/test.webp'
     ])
         .pipe(imagemin([
             imagemin.optipng({optimizationLevel: 3}),

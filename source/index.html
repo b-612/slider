@@ -7,9 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="preload" href="css/bootstrap.min.css" as="style">
+    <link rel="preload" href="css/slick.min.css" as="style">
     <link rel="preload" href="css/style.min.css" as="style">
+    <link rel="preload" href="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" as="script">
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap&subset=cyrillic" rel="stylesheet">
+    <link href="css/slick.min.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.min.css" rel="stylesheet">
   </head>
@@ -18,71 +21,93 @@
     <main>
       <h1 class="visually-hidden">Тестовое задание на должность верстальщика в компанию Россайт</h1>
 
-      <section class="slider">
+      <section class="main-slider">
         <h2 class="visually-hidden">Слайдер со слайдами</h2>
 
         <div class="navbar-001">
-          <div class="container-fluid">
+          <div class="container center-block slider-container">
             <div class="row slider">
 
-              <div class="row slide slide--first">
+              <div class="slide slide--first webp">
                 <div class="row center-block slide__content-wrapper">
                   <div class="col-xs-12 col-sm-5 col-sm-offset-7 col-md-6 col-md-offset-6 col-lg-7 col-lg-offset-5 slide__text-wrapper">
                     <h3 class="slide__title">Этот текст добавлен для демонстрации на странице</h3>
-                    <p class="slide__text">Акция действует с 01.07.18 по 31.07.18</p>
+                    <p class="hidden-xs slide__text slide__text--no-mobile">Акция действует с 01.07.18 по 31.07.18</p>
+                    <p class="visible-xs slide__text slide__text--mobile">Тест на внимательность</p>
                     <a href="#" class="btn btn-info slide__btn slide__btn--details">Подробнее</a>
-                    <a href="#" class="btn btn-default slide__btn slide__btn--specials">Акции</a>
+                    <a href="#" class="btn btn-default hidden-xs slide__btn slide__btn--specials">Акции</a>
                   </div>
                 </div>
-
-                <picture>
-                  <source type="image/webp" media="(min-width: 768px)" srcset="img/slider_1.webp">
-                  <source media="(min-width: 768px)" srcset="img/slider_1.jpg">
-                  <source type="image/webp" srcset="img/slider_1min.webp">
-                  <img src="img/slider_1min.jpg" alt="Изображение к первому слайду" class="slide__image" width="767" height="400">
-                </picture>
               </div>
 
-              <ul class="visible-xs list-unstyled slider__pagination slider__pagination--mobile" aria-label="Навигация по слайдам">
-                <li class="slider__nav-bullet">
-                  <span class="visually-hidden">Первый слайд</span>
-                </li>
+              <div class="slide slide--second webp">
+                <div class="row center-block slide__content-wrapper">
+                  <div class="col-xs-12 col-sm-5 col-sm-offset-7 col-md-6 col-md-offset-6 col-lg-7 col-lg-offset-5 slide__text-wrapper">
+                    <h3 class="slide__title">Этот текст добавлен для демонстрации на странице</h3>
+                    <p class="hidden-xs slide__text slide__text--no-mobile">Акция действует с 01.07.18 по 31.07.18</p>
+                    <p class="visible-xs slide__text slide__text--mobile">Тест на внимательность</p>
+                    <a href="#" class="btn btn-info slide__btn slide__btn--details">Подробнее</a>
+                    <a href="#" class="btn btn-default hidden-xs slide__btn slide__btn--specials">Акции</a>
+                  </div>
+                </div>
+              </div>
 
-                <li class="slider__nav-bullet">
-                  <span class="visually-hidden">Второй слайд</span>
-                </li>
-
-                <li class="slider__nav-bullet">
-                  <span class="visually-hidden">Третий слайд</span>
-                </li>
-
-                <li class="slider__nav-bullet">
-                  <span class="visually-hidden">Четвёртый слайд</span>
-                </li>
-              </ul>
-
-              <ul class="hidden-xs list-unstyled slider__pagination slider__pagination--not-mobile" aria-label="Навигация по слайдам">
-                <li class="slider__nav-bullet">
-
-                </li>
-
-                <li class="slider__nav-bullet">
-
-                </li>
-
-                <li class="slider__nav-bullet">
-
-                </li>
-
-                <li class="slider__nav-bullet">
-
-                </li>
-              </ul>
-
+              <div class="slide slide--third webp">
+                <div class="row center-block slide__content-wrapper">
+                  <div class="col-xs-12 col-sm-5 col-sm-offset-7 col-md-6 col-md-offset-6 col-lg-7 col-lg-offset-5 slide__text-wrapper">
+                    <h3 class="slide__title">Этот текст добавлен для демонстрации на странице</h3>
+                    <p class="hidden-xs slide__text slide__text--no-mobile">Акция действует с 01.07.18 по 31.07.18</p>
+                    <p class="visible-xs slide__text slide__text--mobile">Тест на внимательность</p>
+                    <a href="#" class="btn btn-info slide__btn slide__btn--details">Подробнее</a>
+                    <a href="#" class="btn btn-default hidden-xs slide__btn slide__btn--specials">Акции</a>
+                  </div>
+                </div>
+              </div>
             </div>
+
+<!--            <div class="visible-xs slider-pagination slider-pagination&#45;&#45;mobile" aria-label="Навигация по слайдам">-->
+<!--              <div class="slider-pagination__nav-bullet">-->
+<!--                <span class="visually-hidden">Первый слайд</span>-->
+<!--              </div>-->
+
+<!--              <div class="slider-pagination__nav-bullet">-->
+<!--                <span class="visually-hidden">Второй слайд</span>-->
+<!--              </div>-->
+
+<!--              <div class="slider-pagination__nav-bullet">-->
+<!--                <span class="visually-hidden">Третий слайд</span>-->
+<!--              </div>-->
+
+<!--              <div class="slider-pagination__nav-bullet">-->
+<!--                <span class="visually-hidden">Четвёртый слайд</span>-->
+<!--              </div>-->
+<!--            </div>-->
+
+            <ul class="hidden-xs list-unstyled slider-pagination slider-pagination--not-mobile" aria-label="Навигация по слайдам">
+              <li class="slider-pagination__nav-bullet">
+
+              </li>
+
+              <li class="slider-pagination__nav-bullet">
+
+              </li>
+
+              <li class="slider-pagination__nav-bullet">
+
+              </li>
+
+              <li class="slider-pagination__nav-bullet">
+
+              </li>
+            </ul>
           </div>
         </div>
       </section>
     </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/has-webp.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="js/slider.js"></script>
   </body>
 </html>
