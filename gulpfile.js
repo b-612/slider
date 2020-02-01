@@ -32,7 +32,8 @@ gulp.task('cssclean', function () {
 gulp.task('css', function () {
     return gulp.src([
         'source/css/style.css',
-        'source/css/slick.css'
+        'source/css/slick.css',
+        'source/css/custom-animate.css'
     ])
         .pipe(plumber())
         .pipe(sourcemap.init())
@@ -82,7 +83,11 @@ gulp.task('webp', function () {
 });
 
 gulp.task('jsmin', function () {
-    return gulp.src('source/js/*.js')
+    return gulp.src([
+      'source/js/*.js',
+      '!source/js/jquery-3.4.1.min.js',
+      '!source/js/slick.min.js'
+    ])
         .pipe(jsminify({
             ext:{
                 src:'.js',
@@ -91,6 +96,14 @@ gulp.task('jsmin', function () {
             noSource:'*.js'
         }))
         .pipe(gulp.dest('build/js'))
+});
+
+gulp.task('jscopy', function () {
+  return gulp.src([
+    'source/js/jquery-3.4.1.min.js',
+    'source/js/slick.min.js'
+  ])
+    .pipe(gulp.dest('build/js/'))
 });
 
 gulp.task('refresh', function (done) {
@@ -107,7 +120,7 @@ gulp.task('server', function () {
         ui: false
     });
 
-    gulp.watch('source/css/style.css', gulp.series('cssclean', 'css', 'bootstrap'));
+    gulp.watch('source/css/style.css, source/css/custom-animate.css', gulp.series('cssclean', 'css', 'bootstrap'));
     gulp.watch('source/*.html', gulp.series('copyhtml')).on('change', server.reload);
     gulp.watch('source/js/*.js', gulp.series('jsmin', 'refresh'));
 });
@@ -119,6 +132,7 @@ gulp.task('build', gulp.series(
     'bootstrap',
     'css',
     'webp',
+    'jscopy',
     'jsmin'
 ));
 
