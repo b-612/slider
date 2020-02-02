@@ -400,6 +400,7 @@ img {
   }
 
   .navbar-001 .slide__title {
+    margin-top: 42px;
     font-size: 35px;
     line-height: 1.2;
   }
@@ -420,6 +421,7 @@ img {
     min-width: 130px;
     max-width: 200px;
     margin-right: 12px;
+    margin-bottom: 20px;
     padding-top: 8px;
     padding-bottom: 7px;
   }
