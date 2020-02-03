@@ -50,7 +50,7 @@ img {
 .navbar-001 .slide {
   background-repeat: no-repeat;
   background-position: center top;
-  background-color: #ffffff;
+  background-color: #d8d8d8;;
 
   outline: none;
 }
@@ -130,11 +130,12 @@ img {
   }
 
   .navbar-001 .slide__content-wrapper {
-    width: 375px;
+    width: 360px;
     margin-top: 81px;
   }
 
   .navbar-001 .slide__text-wrapper {
+    padding: 0;
     text-align: center;
   }
 
@@ -200,7 +201,7 @@ img {
 @media (min-width: 768px) {
   .navbar-001 .slide {
     min-height: 675px;
-    padding: 40px 0;
+    padding: 40px 0 110px;
 
     background-position: 36% top;
   }
@@ -548,7 +549,6 @@ img {
   z-index: 1;
 
   width: 250px;
-  margin-left: 12px;
   padding: 10px;
 
   transform: translate(-50%, -50%);
@@ -579,7 +579,6 @@ img {
   position: absolute;
   top: 50%;
   left: 50%;
-  margin-left: 20px;
   transform: translate(-50%, -50%);
   display: flex;
 }
@@ -589,8 +588,8 @@ img {
   width: 35px;
   height: 10px;
   border-radius: 8px;
-  background: #ff900d;
-  box-shadow: 0 0 10px 0 rgba(255, 115, 0, 0.31);
+  background: #ffb400;
+  box-shadow: 0 0 10px 0 rgba(255, 209, 0, 0.33);
 }
 
 .navbar-001 .uno {
