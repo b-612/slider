@@ -49,7 +49,6 @@
       slidesToShow: 1,
       slidesToScroll: 1,
       arrows: true,
-      fade: true,
 
       prevArrow:
         '<button type="button" class="carousel-control slider__arrow slider__arrow--prev">' +
