@@ -49,8 +49,6 @@
       slidesToShow: 1,
       slidesToScroll: 1,
       arrows: true,
-      autoplay: true,
-      autoplaySpeed: 2000,
       fade: true,
 
       prevArrow:
