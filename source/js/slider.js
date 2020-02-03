@@ -45,10 +45,14 @@
       infinite: true,
       accessibility: true,
       zIndex: 1000,
-      speed: 300,
+      speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
       arrows: true,
+      autoplay: true,
+      autoplaySpeed: 2000,
+      fade: true,
+
       prevArrow:
         '<button type="button" class="carousel-control slider__arrow slider__arrow--prev">' +
         '<span class="visually-hidden">Предыдущий слайд</span>' +
