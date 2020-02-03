@@ -120,7 +120,7 @@ gulp.task('server', function () {
         ui: false
     });
 
-    gulp.watch('source/css/style.css, source/css/custom-animate.css', gulp.series('cssclean', 'css', 'bootstrap'));
+    gulp.watch('source/css/style.css', gulp.series('cssclean', 'css', 'bootstrap'));
     gulp.watch('source/*.html', gulp.series('copyhtml')).on('change', server.reload);
     gulp.watch('source/js/*.js', gulp.series('jsmin', 'refresh'));
 });

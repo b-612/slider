@@ -41,18 +41,13 @@ img {
 }
 
 .navbar-001 .slider-container {
-  position: absolute;
-  top: 50%;
-
+  position: relative;
   width: 100%;
+  margin-top: 80px;
   padding: 0;
-
-  transform: translateY(-50%);
 }
 
 .navbar-001 .slide {
-  display: flex;
-
   background-repeat: no-repeat;
   background-position: center top;
   background-color: #ffffff;
@@ -60,8 +55,8 @@ img {
   outline: none;
 }
 
-.slide__content-wrapper {
-  align-self: center;
+.navbar-001 .slide__title {
+  margin-top: 0;
 }
 
 .navbar-001 .slide__btn {
@@ -136,6 +131,7 @@ img {
 
   .navbar-001 .slide__content-wrapper {
     width: 375px;
+    margin-top: 81px;
   }
 
   .navbar-001 .slide__text-wrapper {
@@ -143,7 +139,6 @@ img {
   }
 
   .navbar-001 .slide__title {
-    margin-top: 0;
     margin-bottom: 5px;
 
     letter-spacing: 0.4px;
@@ -151,11 +146,12 @@ img {
   }
 
   .navbar-001 .slide__text--mobile {
-    margin-bottom: 21px;
+    margin-bottom: 22px;
   }
 
   .navbar-001 .slide__btn--details {
-    min-width: 130px;
+    min-width: 129px;
+    padding-bottom: 9px;
   }
 
   .navbar-001 .slick-dots {
@@ -165,8 +161,9 @@ img {
 
     display: flex;
     align-items: flex-start;
+    margin-left: 0;
 
-    transform: translateX(calc(-50% + 7px));
+    transform: translateX(-50%);
   }
 
   .navbar-001 .slick-dots li {
@@ -240,6 +237,10 @@ img {
     background-image: url("../img/slider_4.jpg");
   }
 
+  .navbar-001 .slide__content-wrapper {
+    margin-top: 186px;
+  }
+
   .navbar-001 .slide__btn--specials {
     border: 1px solid #212121;
 
@@ -300,7 +301,9 @@ img {
   }
 
   .navbar-001 .slider__arrow--prev::before {
-    transform: rotate(135deg);
+    transform:
+      rotate(135deg)
+      translate(5px, 5px);
   }
 
   .navbar-001 .slider__arrow--next {
@@ -313,7 +316,9 @@ img {
   }
 
   .navbar-001 .slider__arrow--next::before {
-    transform: rotate(-45deg);
+    transform:
+      rotate(-45deg)
+      translate(5px, 5px);
   }
 
   .navbar-001 .slider-pagination {
@@ -321,8 +326,9 @@ img {
     left: 50%;
 
     width: 100%;
+    margin-left: 0;
 
-    transform: translateX(calc(-50% + 15px));
+    transform: translateX(-50%);
   }
 
   .navbar-001 .slider-pagination .slick-list {
@@ -400,14 +406,12 @@ img {
   }
 
   .navbar-001 .slide__title {
-    margin-top: 42px;
     font-size: 35px;
     line-height: 1.2;
   }
 
   .navbar-001 .slide__text-wrapper {
-    margin-top: -60px;
-    padding-left: 65px;
+    padding-left: 82px;
   }
 
   .navbar-001 .slide__text--no-mobile {
@@ -469,7 +473,7 @@ img {
   }
 
   .navbar-001 .slide__title {
-    margin-top: 15px;
+    margin-bottom: 12px;
 
     font-size: 42px;
     line-height: 1.2;
@@ -528,8 +532,6 @@ img {
   left: 0;
   z-index: 5;
 
-  display: flex;
-  justify-content: center;
   align-items: center;
   width: 100%;
   height: 100%;
@@ -540,10 +542,16 @@ img {
 }
 
 .navbar-001 .start-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+
   width: 250px;
   margin-left: 12px;
-
   padding: 10px;
+
+  transform: translate(-50%, -50%);
 
   font-size: 16px;
   color: #ffffff;
@@ -569,221 +577,144 @@ img {
 
 .navbar-001 .loading-wait {
   position: absolute;
-
+  top: 50%;
+  left: 50%;
+  margin-left: 20px;
+  transform: translate(-50%, -50%);
   display: flex;
 }
 
-.navbar-001 .item-1 {
-  width: 20px;
-  height: 20px;
-  margin: 7px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-
-  background-color: #eed968;
+.navbar-001 .dash {
+  margin: 0 15px;
+  width: 35px;
+  height: 10px;
+  border-radius: 8px;
+  background: #ff900d;
+  box-shadow: 0 0 10px 0 rgba(255, 115, 0, 0.31);
 }
 
-@keyframes scale {
+.navbar-001 .uno {
+  margin-right: -18px;
+  transform-origin: center left;
+  animation: spin 3s linear infinite;
+}
+
+.navbar-001 .dos {
+  transform-origin: center right;
+  animation: spin2 3s linear infinite;
+  animation-delay: .2s;
+}
+
+.navbar-001 .tres {
+  transform-origin: center right;
+  animation: spin3 3s linear infinite;
+  animation-delay: .3s;
+}
+
+.navbar-001 .cuatro {
+  transform-origin: center right;
+  animation: spin4 3s linear infinite;
+  animation-delay: .4s;
+}
+
+@keyframes spin {
   0% {
-    transform: scale(1);
+    transform: rotate(0deg);
   }
-
-  50%,
-  75% {
-    transform: scale(2.5);
+  25% {
+    transform: rotate(360deg);
   }
-
-  78%,
+  30% {
+    transform: rotate(370deg);
+  }
+  35% {
+    transform: rotate(360deg);
+  }
   100% {
-    opacity: 0;
+    transform: rotate(360deg);
   }
 }
 
-.navbar-001 .item-1::before {
-  content: "";
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-
-  background-color: #eed968;
-  opacity: 0.7;
-
-  animation: scale 2s infinite cubic-bezier(0, 0, 0.49, 1.02);
-  animation-delay: 200ms;
-  transition: 0.5s all ease;
-  transform: scale(1);
-}
-
-.navbar-001 .item-2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  margin: 7px;
-
-  background-color: #eece68;
-}
-
-@keyframes scale {
+@keyframes spin2 {
   0% {
-    transform: scale(1);
+    transform: rotate(0deg);
   }
-
-  50%,
-  75% {
-    transform: scale(2.5);
+  20% {
+    transform: rotate(0deg);
   }
-
-  78%,
+  30% {
+    transform: rotate(-180deg);
+  }
+  35% {
+    transform: rotate(-190deg);
+  }
+  40% {
+    transform: rotate(-180deg);
+  }
+  78% {
+    transform: rotate(-180deg);
+  }
+  95% {
+    transform: rotate(-360deg);
+  }
+  98% {
+    transform: rotate(-370deg);
+  }
   100% {
-    opacity: 0;
+    transform: rotate(-360deg);
   }
 }
 
-.navbar-001 .item-2::before {
-  content: "";
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-
-  background-color: #eece68;
-  opacity: 0.7;
-
-  animation: scale 2s infinite cubic-bezier(0, 0, 0.49, 1.02);
-  animation-delay: 400ms;
-  transition: 0.5s all ease;
-  transform: scale(1);
-}
-
-.navbar-001 .item-3 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  margin: 7px;
-
-  background-color: #eec368;
-}
-
-@keyframes scale {
+@keyframes spin3 {
   0% {
-    transform: scale(1);
+    transform: rotate(0deg);
   }
-
-  50%,
+  27% {
+    transform: rotate(0deg);
+  }
+  40% {
+    transform: rotate(180deg);
+  }
+  45% {
+    transform: rotate(190deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  62% {
+    transform: rotate(180deg);
+  }
   75% {
-    transform: scale(2.5);
+    transform: rotate(360deg);
   }
-
-  78%,
+  80% {
+    transform: rotate(370deg);
+  }
+  85% {
+    transform: rotate(360deg);
+  }
   100% {
-    opacity: 0;
+    transform: rotate(360deg);
   }
 }
 
-.navbar-001 .item-3::before {
-  content: "";
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-
-  background-color: #eec368;
-  opacity: 0.7;
-
-  animation: scale 2s infinite cubic-bezier(0, 0, 0.49, 1.02);
-  animation-delay: 600ms;
-  transition: 0.5s all ease;
-  transform: scale(1);
-}
-
-.navbar-001 .item-4 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 20px;
-  height: 20px;
-  margin: 7px;
-  border-radius: 50%;
-
-  background-color: #eead68;
-}
-
-@keyframes scale {
+@keyframes spin4 {
   0% {
-    transform: scale(1);
+    transform: rotate(0deg);
   }
-
-  50%,
+  38% {
+    transform: rotate(0deg);
+  }
+  60% {
+    transform: rotate(-360deg);
+  }
+  65% {
+    transform: rotate(-370deg);
+  }
   75% {
-    transform: scale(2.5);
+    transform: rotate(-360deg);
   }
-
-  78%,
   100% {
-    opacity: 0;
+    transform: rotate(-360deg);
   }
-}
-
-.navbar-001 .item-4::before {
-  content: "";
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-
-  background-color: #eead68;
-  opacity: 0.7;
-
-  animation: scale 2s infinite cubic-bezier(0, 0, 0.49, 1.02);
-  animation-delay: 800ms;
-  transition: 0.5s all ease;
-  transform: scale(1);
-}
-
-.navbar-001 .item-5 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 20px;
-  height: 20px;
-  margin: 7px;
-  border-radius: 50%;
-
-  background-color: #ee8c68;
-}
-
-@keyframes scale {
-  0% {
-    transform: scale(1);
-  }
-
-  50%,
-  75% {
-    transform: scale(2.5);
-  }
-
-  78%,
-  100% {
-    opacity: 0;
-  }
-}
-
-.navbar-001 .item-5::before {
-  content: "";
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-
-  background-color: #ee8c68;
-  opacity: 0.7;
-
-  animation: scale 2s infinite cubic-bezier(0, 0, 0.49, 1.02);
-  animation-delay: 1000ms;
-  transition: 0.5s all ease;
-  transform: scale(1);
 }

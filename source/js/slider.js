@@ -120,10 +120,8 @@
     if ($(window).width() >= MOB_MAX) {
       disablePagination();
       activateCustomPagination();
-      console.log('desk');
     } else {
       disablePagination();
-      console.log('mob');
     }
   }));
 })();
